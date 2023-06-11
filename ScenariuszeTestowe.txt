@@ -1,0 +1,134 @@
+1. TestSuite - Navigate to Google.pl and assert
+    1. TestCase - Click on "Zaakceptuj wszsytko"
+        a. Visit -> https://www.google.pl/
+        b. Assert if opened webpage address includes "google"
+        c. Validate if: "Zaakceptuj wszystko" button is visible
+        d. Click on "Zaakceptuj wszystko" button
+        e. Validate if: if: "Zaakceptuj wszystko" button is not visible
+        f. Assert if newly opened webpage address includes "google"
+    2. TestCase - Click on "Odrzuć wszystko"
+        a. Visit -> https://www.google.pl/
+        b. Assert if opened webpage address includes "google"
+        c. Validate if: "Odrzuć wszystko" button is visible
+        d. Click on "Odrzuć wszystko" button
+        e. Validate if: if: "Odrzuć wszystko" button is not visible
+        f. Assert if newly opened webpage address includes "google"
+    3. TestCase - Click on "Prywatność"
+        a. Visit -> https://www.google.pl/
+        b. Assert if opened webpage address includes "google"
+        c. Validate if: "Prywatność" button is visible
+        d. Click on "Prywatność" button
+        e. Assert if newly opened webpage address includes "policies.google.com/privacy"
+    4. TestCase - Click on "Warunki"
+        a. Visit -> https://www.google.pl/
+        b. Assert if opened webpage address includes "google"
+        c. Validate if: "Warunki" button is visible
+        d. Click on "Warunki" button
+        e. Assert if newly opened webpage address includes "policies.google.com/terms"
+
+2. TestSuite - Navigate to Google.pl and search for "Otomoto.pl"
+    1. TestCase - Search for Otomoto.pl and press Enter
+        a. Visit -> https://www.google.pl/
+        b. Assert if opened webpage address includes "google"
+        c. Validate if: "Zaakceptuj wszystko" button is visible
+        d. Click on "Zaakceptuj wszystko" button
+        e. Validate if: if: "Zaakceptuj wszystko" button is not visible
+        f. Assert if newly opened webpage address includes "google"
+        g. Click on "Search" input field, type: "Otomoto.pl" and press Enter
+        h. Assert if newly opened webpage address includes "search?q=Otomoto&source"
+    2. TestCase - Search for Otomoto.pl and select first link from search resoults
+        a. Visit -> https://www.google.pl/
+        b. Assert if opened webpage address includes "google"
+        c. Validate if: "Zaakceptuj wszystko" button is visible
+        d. Click on "Zaakceptuj wszystko" button
+        e. Validate if: if: "Zaakceptuj wszystko" button is not visible
+        f. Assert if newly opened webpage address includes "google"
+        g. Click on "Search" input field, type: "Otomoto.pl" and press Enter
+        h. Assert if newly opened webpage address includes "search?q=Otomoto&source"
+        i. Click on the first webpage link from search resoults
+        j. Assert if newly opened webpage address equals to "https://www.otomoto.pl/"
+
+3. TestSuite - Navigate to Otomoto.pl and assert
+    1. TestCase - Click on "Akcpetuj"
+        a. Visit -> http://www.otomoto.pl
+        b. Assert if opened webpage address includes "otomoto"
+        c. Validate if: "Akcpetuj" button is visible
+        d. Click on "Akceptuj" button
+        e. Validate if: "Akcpetuj" button is not visible
+        f. Assert if opened webpage address includes "otomoto"
+    2. TestCase - Click on "Pokaz cele"
+        a. Visit -> http://www.otomoto.pl
+        b. Assert if opened webpage address includes "otomoto"
+        c. Validate if: "Pokaz cele" button is visible
+        d. Click on "Pokaz cele"" button
+        e. Validate if: "Pokaz cele"" button is not visible
+        f. Assert if opened webpage address includes "otomoto"
+    3. TestCase - Click on "Zezwolenie na wszystkie"
+        a. Visit -> http://www.otomoto.pl
+        b. Assert if opened webpage address includes "otomoto"
+        c. Validate if: "Pokaz cele" button is visible
+        d. Click on "Pokaz cele"" button
+        e. Validate if: "Pokaz cele"" button is not visible
+        f. Validate if: "Zezwolenie na wszystkie" button is visible
+        g. Click on "Zezwolenie na wszystkie" button
+        h. Validate if: "Zezwolenie na wszystkie" button is not visible
+        i. Assert if opened webpage address includes "otomoto"
+    4. TestCase - Selecting a particullar policy and clicking on "Potwierdzenie moich wyborów"
+        a. Visit -> http://www.otomoto.pl
+        b. Assert if opened webpage address includes "otomoto"
+        c. Validate if: "Pokaz cele" button is visible
+        d. Click on "Pokaz cele"" button
+        e. Validate if: "Pokaz cele"" button is not visible
+        f. Click on "Pliki cookie wydajności" mark button
+        g. Click on "Funkcjonalne pliki cookie" mark button
+        h. Click on "Google & IAB TCF 2 Purposes of Processing" mark button
+        i. Click on "Potwierdzenie moich wyborów" button
+        j. Validate if: "Potwierdzenie moich wyborów"" button is not visible
+        k. Assert if opened webpage address includes "otomoto"
+
+4. TestSuite - Navigate to Otomoto.pl and search for "Porsche Taycan", takes a screenshot and goes througt the photos
+    1. TestCase - Click and select Porsche brand and Tycan as a model
+        a. Visit -> http://www.otomoto.pl
+        b. Assert if opened webpage address includes "otomoto"
+        c. Validate if: "Akcpetuj" button is visible
+        d. Click on "Akceptuj" button
+        e. Validate if: "Akcpetuj" button is not visible
+        f. Assert if opened webpage address includes "otomoto"
+        g. Click on "Marka pojazdu" input filed and type: "Porsche"
+        h. Click on first "Porsche" search resoult button/link
+        i. Click on "Model pojazdu" input filed and type: "Taycan"
+        j. Click on first "Taycan" search resoult button/link
+        k. Click on "Pokaz wyniki" button
+        l. Assert if newly opened web page address equals to "https://www.otomoto.pl/osobowe/porsche/taycan"
+    2. TestCase - Order resoults by Highest price and click on the most expensive one
+        a. Visit -> https://www.otomoto.pl/osobowe/porsche/taycan
+        b. Assert if newly opened web page address includes "otomoto.pl/osobowe/porsche/taycan"
+        c. Validate if: "Akcpetuj" button is visible
+        d. Click on "Akceptuj" button
+        e. Validate if: "Akcpetuj" button is not visible
+        f. Click on "Sortuj" dropdown button
+        g. Click on "Sortuj po cenie: Od najwyzszej" button
+        h. Click on first on top sorting resaults link
+        i. Take a screenshot of newly opened webpage
+        j. Click - 5 times - on "Next arrow right" button
+
+5. TestSuite - Navigate to Wykop.pl and assert
+    1. TestCase - Login&Logoff to/from Wykop.pl
+        a. Visit -> https://wykop.pl/
+        b. Assert if oepend web page address equals to "https://wykop.pl/"
+        c. Click on "Zaloguj się" button
+        d. Click on "Login" input field and type: "LukaszPB2023"
+        e. Click on "Password" input field and type: "Lukasz2023"
+        f. Click on "ZALOGUJ SIĘ" button
+        g. Assert if "PM" button is visible
+    2. TestCase - Login and Search & Open "Pasta o serwerowni"
+        a. Visit -> https://wykop.pl/
+        b. Assert if oepend web page address equals to "https://wykop.pl/"
+        c. Click on "Zaloguj się" button
+        d. Click on "Login" input field and type: "LukaszPB2023"
+        e. Click on "Password" input field and type: "Lukasz2023"
+        f. Click on "ZALOGUJ SIĘ" button
+        g. Assert if "PM" button is visible
+        h. Click on "Search" input field and type: "Pasta o serwerowni"
+        i. Click on 3rd search resoult link
+        j. On a newly opened web page click on a article's title link
