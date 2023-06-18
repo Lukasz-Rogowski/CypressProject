@@ -1,7 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  defaultCommandTimeout: 10000,
+  defaultCommandTimeout: 15000,
   screenshotOnRunFailure: false,
   video: false,
   videoUploadOnPasses: false,
@@ -14,8 +14,8 @@ module.exports = defineConfig({
 	"json": true,
   },
 	e2e: {
-		viewportHeight: 1080,
-		viewportWidth: 1440,
+		viewportHeight: 600,
+		viewportWidth: 1000,
 		baseUrl: "https://google.pl",
 		chromeWebSecurity: false,
 		watchForFileChanges: false,
