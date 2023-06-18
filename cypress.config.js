@@ -1,7 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  defaultCommandTimeout: 15000,
+  defaultCommandTimeout: 6000,
   screenshotOnRunFailure: false,
   video: false,
   videoUploadOnPasses: false,
@@ -16,10 +16,10 @@ module.exports = defineConfig({
 	e2e: {
 		viewportHeight: 600,
 		viewportWidth: 1000,
-		baseUrl: "https://google.pl",
+		baseUrl: "https://www.google.pl/",
 		chromeWebSecurity: false,
 		watchForFileChanges: false,
-		retries: 1,
+		retries: 2,
 		setupNodeEvents(on, config) {
 			// implement node event listeners here
 		},
