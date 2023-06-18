@@ -2,7 +2,7 @@
 //import googlePage from "../PageObject/googleMainPageObject";
 //const google = new googlePage();
 
-describe('Navigate to Google.pl and assert', () => {
+describe.only('Navigate to Google.pl and assert', () => {
 
     beforeEach("Setup", () => {
         cy.visit('/')
