@@ -9,7 +9,7 @@ describe('Navigate to Google.pl and assert', () => {
         cy.url().should("contain", "google")
     });
     
-    it('Idz do google.pl', () => {
+    it.skip('Idz do google.pl', () => {
         cy.visit('https://www.google.pl/')
     })
 
@@ -159,7 +159,7 @@ describe('Navigate to Otomoto.pl and search for "Porsche Taycan", takes a screen
         //   }
     })
 })
-describe.only('Navigate to Wykop.pl and assert', () => {
+describe('Navigate to Wykop.pl and assert', () => {
         
     it('Login&Logoff to/from Wykop.pl', () => {
 
