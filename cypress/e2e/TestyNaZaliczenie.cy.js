@@ -9,7 +9,7 @@ describe('Navigate to Google.pl and assert', () => {
         cy.url().should("contain", "google")
     });
     
-    it.only('Idz do google.pl', () => {
+    it('Idz do google.pl', () => {
         cy.visit('https://www.google.pl/')
     })
 
