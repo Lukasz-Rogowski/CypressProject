@@ -159,7 +159,7 @@ describe('Navigate to Otomoto.pl and search for "Porsche Taycan", takes a screen
         //   }
     })
 })
-describe('Navigate to Wykop.pl and assert', () => {
+describe.only('Navigate to Wykop.pl and assert', () => {
         
     it('Login&Logoff to/from Wykop.pl', () => {
 
