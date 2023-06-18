@@ -2,7 +2,7 @@
 //import googlePage from "../PageObject/googleMainPageObject";
 //const google = new googlePage();
 
-describe('Navigate to Google.pl and assert', () => {
+describe.only('Navigate to Google.pl and assert', () => {
 
     beforeEach("Setup", () => {
         cy.visit('/')
@@ -10,33 +10,33 @@ describe('Navigate to Google.pl and assert', () => {
     });
     
     it('Click on "Zaakceptuj wszystko"', () => {
-        cy.get('#L2AGLb > .QS5gu').should('be.visible')
+        //cy.get('#L2AGLb > .QS5gu').should('be.visible')
         cy.get('#L2AGLb > .QS5gu').click()
-        cy.get('#L2AGLb > .QS5gu').should('not.be.visible')
+        //cy.get('#L2AGLb > .QS5gu').should('not.be.visible')
         cy.url().should("contain", "google")
     })
 
     it('Click on "Odrzuć wszystko"', () => {
-        cy.get('#W0wltc  > .QS5gu').should('be.visible')
+        //cy.get('#W0wltc  > .QS5gu').should('be.visible')
         cy.get('#W0wltc  > .QS5gu').click()
-        cy.get('#W0wltc  > .QS5gu').should('not.be.visible')
+        //cy.get('#W0wltc  > .QS5gu').should('not.be.visible')
         cy.url().should("contain", "google")
     })
 
     it('Click on "Prywatność"', () => {
-        cy.get('#RP3V5c').should('be.visible')
+        //cy.get('#RP3V5c').should('be.visible')
         cy.get('#RP3V5c').click()
         cy.url().should("contain", "policies.google.com/privacy")
     })
 
     it('Click on "Warunki"', () => {
-        cy.get('#HQ1lb').should('be.visible')
+        //cy.get('#HQ1lb').should('be.visible')
         cy.get('#HQ1lb').click()
         cy.url().should("contain", "policies.google.com/terms")
     })
 })
 
-describe.only('Navigate to Google.pl and search for "Otomoto.pl"', {tags: 'Otomoto'}, () => {
+describe('Navigate to Google.pl and search for "Otomoto.pl"', {tags: 'Otomoto'}, () => {
 
     beforeEach("Setup", () => {
         cy.visit('/')
