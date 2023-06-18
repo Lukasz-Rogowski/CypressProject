@@ -4,7 +4,15 @@ jobs:
   cypress-run:
     name: Cypress run
     runs-on: ubuntu-22.04
+    
+    strategy:
+      matrix:
+        node: [20]
+    
+
     steps:
+
+      
       - name: Checkout
         uses: actions/checkout@v3
 
@@ -13,9 +21,12 @@ jobs:
         with:
           record: false
           config-file: cypress.config.js
+
         env:
           # pass the Dashboard record key as an environment variable
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           # pass GitHub token to allow accurately detecting a build vs a re-run build
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+          
           
