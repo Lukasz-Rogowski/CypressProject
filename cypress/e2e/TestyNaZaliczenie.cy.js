@@ -5,7 +5,7 @@
 describe.only('Navigate to Google.pl and assert', () => {
 
     beforeEach("Setup", () => {
-        cy.visit('https://www.google.pl/')
+        cy.visit('/')
         cy.url().should("contain", "google")
     });
     
