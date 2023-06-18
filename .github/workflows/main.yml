@@ -1,15 +1,16 @@
-name: Chrome
-on: push
+name: Cypress tests
+on: [push]
 jobs:
-  chrome:
+  cypress-run:
+    name: Cypress run
     runs-on: ubuntu-22.04
-    name: E2E on Chrome
     steps:
-      - uses: actions/checkout@v3
-      - uses: cypress-io/github-action@v5
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
         with:
-          browser: chrome
-          headed: true
           record: false
         env:
           # pass the Dashboard record key as an environment variable
