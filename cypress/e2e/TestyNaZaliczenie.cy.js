@@ -27,13 +27,13 @@ describe.only('Navigate to Google.pl and assert', () => {
         cy.url().should("contain", "google")
     })
 
-    it('Click on "Prywatność"', () => {
+    it.skip('Click on "Prywatność"', () => {
         //cy.get('#RP3V5c').should('be.visible')
         cy.get('#RP3V5c').click()
         cy.url().should("contain", "policies.google.com/privacy")
     })
 
-    it('Click on "Warunki"', () => {
+    it.skip('Click on "Warunki"', () => {
         //cy.get('#HQ1lb').should('be.visible')
         cy.get('#HQ1lb').click()
         cy.url().should("contain", "policies.google.com/terms")

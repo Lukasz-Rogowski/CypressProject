@@ -24,7 +24,7 @@ jobs:
         with:
           record: false
           config-file: cypress.config.js
-          node-version: ${{ matrix.node }}
+          auto-cancel-after-failures: true
           
 
         env:
