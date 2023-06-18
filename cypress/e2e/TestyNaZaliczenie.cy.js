@@ -2,13 +2,17 @@
 //import googlePage from "../PageObject/googleMainPageObject";
 //const google = new googlePage();
 
-describe.only('Navigate to Google.pl and assert', () => {
+describe('Navigate to Google.pl and assert', () => {
 
     beforeEach("Setup", () => {
         cy.visit('https://www.google.pl/')
         cy.url().should("contain", "google")
     });
     
+    it.only('Idz do google.pl', () => {
+        cy.visit('https://www.google.pl/')
+    })
+
     it('Click on "Zaakceptuj wszystko"', () => {
         //cy.get('#L2AGLb > .QS5gu').should('be.visible')
         cy.get('#L2AGLb > .QS5gu').click()
