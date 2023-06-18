@@ -2,7 +2,7 @@
 //import googlePage from "../PageObject/googleMainPageObject";
 //const google = new googlePage();
 
-describe.only('Navigate to Google.pl and assert', () => {
+describe('Navigate to Google.pl and assert', () => {
 
     beforeEach("Setup", () => {
         cy.visit('/')
@@ -36,7 +36,7 @@ describe.only('Navigate to Google.pl and assert', () => {
     })
 })
 
-describe('Navigate to Google.pl and search for "Otomoto.pl"', {tags: 'Otomoto'}, () => {
+describe.only('Navigate to Google.pl and search for "Otomoto.pl"', {tags: 'Otomoto'}, () => {
 
     beforeEach("Setup", () => {
         cy.visit('/')
