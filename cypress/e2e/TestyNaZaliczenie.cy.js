@@ -43,15 +43,16 @@ describe('Navigate to Google.pl and search for "Otomoto.pl"', {tags: 'Otomoto'},
         cy.url().should("contain", "google")
     });
     
-    it('Search for Otomoto.pl and press Enter', () => {
+    it('Search for Otomoto.pl and press Szukaj w google', () => {
         cy.get('#W0wltc  > .QS5gu').should('be.visible')
         cy.get('#W0wltc  > .QS5gu').click()
         cy.get('#W0wltc  > .QS5gu').should('not.be.visible')
         cy.url().should("contain", "google")
         cy.get('#APjFqb').click()
         //google().cookiesAccept().click()
-        cy.get('#APjFqb').type('Otomoto').type('{enter}')
-        cy.url().should("contain", "search?q=Otomoto&source")
+        cy.get('#APjFqb').type('Otomoto')
+        cy.get('.FPdoLc > center > .gNO89b').click()
+        cy.url().should("contain", "https://www.google.pl/search?q=Otomoto")
     })
 
     it('Search for Otomoto.pl and select first link from search resoults', () => {
@@ -60,8 +61,9 @@ describe('Navigate to Google.pl and search for "Otomoto.pl"', {tags: 'Otomoto'},
         cy.get('#W0wltc  > .QS5gu').should('not.be.visible')
         cy.url().should("contain", "google")
         cy.get('#APjFqb').click()
-        cy.get('#APjFqb').type('Otomoto').type('{enter}')
-        cy.url().should("contain", "search?q=Otomoto&source")
+        cy.get('#APjFqb').type('Otomoto')
+        cy.get('.FPdoLc > center > .gNO89b').click()
+        cy.url().should("contain", "https://www.google.pl/search?q=Otomoto")
         cy.get('.tF2Cxc > .yuRUbf > a > .LC20lb').click()
         cy.url().should('equal','https://www.otomoto.pl/')
     })
