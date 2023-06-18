@@ -24,7 +24,8 @@ jobs:
         with:
           record: false
           config-file: cypress.config.js
-          spec: Support/e2e.js
+          node-version: ${{ matrix.node }}
+          
 
         env:
           # pass the Dashboard record key as an environment variable
