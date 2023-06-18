@@ -1,4 +1,6 @@
 ///<reference types="cypress" />
+//import googlePage from "../PageObject/googleMainPageObject";
+//const google = new googlePage();
 
 describe('Navigate to Google.pl and assert', () => {
 
@@ -34,7 +36,7 @@ describe('Navigate to Google.pl and assert', () => {
     })
 })
 
-describe('Navigate to Google.pl and search for "Otomoto.pl"', () => {
+describe('Navigate to Google.pl and search for "Otomoto.pl"', {tags: 'Otomoto'}, () => {
 
     beforeEach("Setup", () => {
         cy.visit('/')
@@ -47,6 +49,7 @@ describe('Navigate to Google.pl and search for "Otomoto.pl"', () => {
         cy.get('#W0wltc  > .QS5gu').should('not.be.visible')
         cy.url().should("contain", "google")
         cy.get('#APjFqb').click()
+        //google().cookiesAccept().click()
         cy.get('#APjFqb').type('Otomoto').type('{enter}')
         cy.url().should("contain", "search?q=Otomoto&source")
     })
@@ -65,7 +68,7 @@ describe('Navigate to Google.pl and search for "Otomoto.pl"', () => {
 
 })
 
-describe('Navigate to Otomoto.pl and assert', () => {
+describe('Navigate to Otomoto.pl and assert', {tags: 'Otomoto'}, () => {
 
     beforeEach("Setup", () => {
         cy.visit('http://www.otomoto.pl')
@@ -105,7 +108,7 @@ describe('Navigate to Otomoto.pl and assert', () => {
     })
 })
 
-describe('Navigate to Otomoto.pl and search for "Porsche Taycan", takes a screenshot and goes througt the photos', () => {
+describe('Navigate to Otomoto.pl and search for "Porsche Taycan", takes a screenshot and goes througt the photos', {tags: 'Otomoto'}, () => {
 
     it('Click and select Porsche brand and Tycan as a model', () => {
         cy.visit('http://www.otomoto.pl')
