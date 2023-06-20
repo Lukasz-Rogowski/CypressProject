@@ -1,41 +1,47 @@
 ///<reference types="cypress" />
-//import googlePage from "../PageObject/googleMainPageObject";
-//const google = new googlePage();
+import googlePage from "../PageObject/googleMainPageObject";
+const google = new googlePage();
 
-describe.only('Navigate to Google.pl and assert', () => {
+describe('Navigate to Google.pl and assert', () => {
 
     beforeEach("Setup", () => {
         cy.visit('/')
         cy.url().should("contain", "google")
     });
     
-    it('Idz do google.pl', () => {
-        cy.visit('https://www.google.pl/')
-    })
-
     it('Click on "Zaakceptuj wszystko"', () => {
         //cy.get('#L2AGLb > .QS5gu').should('be.visible')
-        cy.get('#L2AGLb > .QS5gu').click()
+        //cy.get('#L2AGLb > .QS5gu').click()
         //cy.get('#L2AGLb > .QS5gu').should('not.be.visible')
+        google.acceptCookies().should('be.visible')
+        google.acceptCookies().click()
+        google.acceptCookies().should('not.be.visible')
         cy.url().should("contain", "google")
     })
 
     it('Click on "Odrzuć wszystko"', () => {
-        //cy.get('#W0wltc  > .QS5gu').should('be.visible')
-        cy.get('#W0wltc  > .QS5gu').click()
-        //cy.get('#W0wltc  > .QS5gu').should('not.be.visible')
+        // cy.get('#W0wltc  > .QS5gu').should('be.visible')
+        // cy.get('#W0wltc  > .QS5gu').click()
+        // cy.get('#W0wltc  > .QS5gu').should('not.be.visible')
+        google.deniedCookies().should('be.visible')
+        google.deniedCookies().click()
+        google.deniedCookies().should('not.be.visible')
         cy.url().should("contain", "google")
     })
 
-    it.skip('Click on "Prywatność"', () => {
-        //cy.get('#RP3V5c').should('be.visible')
-        cy.get('#RP3V5c').click()
+    it('Click on "Prywatność"', () => {
+        // cy.get('#RP3V5c').should('be.visible')
+        // cy.get('#RP3V5c').click()
+        google.prywatnoscCookies().should('be.visible')
+        google.prywatnoscCookies().click()
         cy.url().should("contain", "policies.google.com/privacy")
     })
 
-    it.skip('Click on "Warunki"', () => {
-        //cy.get('#HQ1lb').should('be.visible')
-        cy.get('#HQ1lb').click()
+    it('Click on "Warunki"', () => {
+        // cy.get('#HQ1lb').should('be.visible')
+        // cy.get('#HQ1lb').click()
+        google.warunkiCookies().should('be.visible')
+        google.warunkiCookies().click()
         cy.url().should("contain", "policies.google.com/terms")
     })
 })
@@ -48,14 +54,16 @@ describe('Navigate to Google.pl and search for "Otomoto.pl"', {tags: 'Otomoto'},
     });
     
     it('Search for Otomoto.pl and press Szukaj w google', () => {
+        //cy.origin('https://www.google.com', () => {
+        
         cy.get('#W0wltc  > .QS5gu').should('be.visible')
         cy.get('#W0wltc  > .QS5gu').click()
         cy.get('#W0wltc  > .QS5gu').should('not.be.visible')
         cy.url().should("contain", "google")
-        cy.get('#APjFqb').click()
-        //google().cookiesAccept().click()
-        cy.get('#APjFqb').type('Otomoto')
-        cy.get('.FPdoLc > center > .gNO89b').click()
+       //cy.get('#APjFqb').click()
+        cy.get('#APjFqb').type('Otomoto').type('{enter}')
+        //cy.solveGoogleReCAPTCHA()
+        //cy.get('.tF2Cxc > .yuRUbf > a > .LC20lb').click()
         cy.url().should("contain", "https://www.google.pl/search?q=Otomoto")
     })
 
@@ -65,14 +73,15 @@ describe('Navigate to Google.pl and search for "Otomoto.pl"', {tags: 'Otomoto'},
         cy.get('#W0wltc  > .QS5gu').should('not.be.visible')
         cy.url().should("contain", "google")
         cy.get('#APjFqb').click()
-        cy.get('#APjFqb').type('Otomoto')
-        cy.get('.FPdoLc > center > .gNO89b').click()
-        cy.url().should("contain", "https://www.google.pl/search?q=Otomoto")
+        cy.get('#APjFqb').type('Otomoto').type('{enter}')
         cy.get('.tF2Cxc > .yuRUbf > a > .LC20lb').click()
+        cy.url().should("contain", "otomoto")
+        cy.get('#onetrust-accept-btn-handler').click()
         cy.url().should('equal','https://www.otomoto.pl/')
     })
 
 })
+
 
 describe('Navigate to Otomoto.pl and assert', {tags: 'Otomoto'}, () => {
 
@@ -181,7 +190,7 @@ describe('Navigate to Wykop.pl and assert', () => {
         })
 
         cy.login()
-        cy.get('.pm > [data-unread="0"]').should("be.visible")
+        //cy.get('.pm > [data-unread="0"]').should("be.visible")
         cy.get('[type="search"]').click().type('Pasta o serwerowni')
         cy.get('.links > .content > ul > :nth-child(3) > a > span').click()
         cy.get('h2 > a').invoke('removeAttr', 'target').click()

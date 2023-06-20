@@ -1,7 +1,8 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  
+  experimentalMemoryManagement: true,
+  numTestsKeptInMemory: 1,
   defaultCommandTimeout: 6000,
   screenshotOnRunFailure: false,
   video: false,
@@ -15,12 +16,12 @@ module.exports = defineConfig({
 	"json": true,
   },
 	e2e: {
-		viewportHeight: 600,
-		viewportWidth: 1000,
+		viewportHeight: 1080,
+		viewportWidth: 1440,
 		baseUrl: "https://www.google.pl/",
 		chromeWebSecurity: false,
 		watchForFileChanges: false,
-		retries: 2,
+		retries: 1,
 		setupNodeEvents(on, config) {
 			// implement node event listeners here
 		},
